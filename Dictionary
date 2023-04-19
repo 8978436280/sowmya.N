@@ -1,0 +1,28 @@
+package pro;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver; 
+	public class DictionarySearch {
+
+		public static void main(String[] args) throws InterruptedException {
+			// TODO Auto-generated method stub
+			System.setProperty("webdriver.chrome.driver",
+					"/Users/chanagonda/Downloads/chromedriver_mac64/chromedriver");
+			WebDriver driver=new ChromeDriver();
+			driver.get("https://www.dictionary.com");
+			driver.findElement(By.id("global-search")).sendKeys("obsession");
+			driver.findElement(By.id("global-search")).sendKeys(Keys.ENTER);
+			//driver.findElement(By.id("//*[@id=\"root\"]/div/header/form/div/div")).click();
+			
+			Thread.sleep(2000);
+			System.out.println(
+					driver.findElement
+			(By.cssSelector("[data-linkid=nn1ov4]")).getText());
+			
+}
+
+
+	}
+
+
